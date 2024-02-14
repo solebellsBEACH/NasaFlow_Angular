@@ -3,3 +3,8 @@ header {
     height: var(--header-min-height);
     background-color: var(--black);
 }
+
+img {
+    height: inherit;
+    padding: 0.5rem;
+}

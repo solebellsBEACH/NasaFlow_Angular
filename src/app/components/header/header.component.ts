@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AssetsLinks } from '../../shared/constants/links';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  nasaLogoSrc = AssetsLinks.nasaLogo
 }
