@@ -11,7 +11,7 @@ describe('ImageOfDayComponent', () => {
       declarations: [ImageOfDayComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ImageOfDayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +19,15 @@ describe('ImageOfDayComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain Learn Mode text', () => {
+    const compiled = fixture.nativeElement.querySelector('h1');
+    expect(compiled.textContent).toBe("To learn more, click below")
+  });
+
+  it('should contain learn more button', () => {
+    const compiled = fixture.nativeElement.querySelector('button');
+    expect(compiled.textContent).toBe("learn more")
   });
 });

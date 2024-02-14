@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './image-of-day.component.scss'
 })
 export class ImageOfDayComponent {
-  url = "https://science.nasa.gov/wp-content/uploads/2024/02/grasshopper-eclipse-soundscapes.jpeg"
+  url = "https://apod.nasa.gov/apod/image/9801/sataurora_hst.jpg"
 }
