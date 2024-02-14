@@ -11,7 +11,7 @@ describe('HeaderComponent', () => {
       declarations: [HeaderComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +20,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain nasa-logo', () => {
+    const compiled = fixture.nativeElement.querySelector('img[alt="Nasa Logo"]')
+    expect(compiled).toBeTruthy();
+  });
+
 });
