@@ -1,7 +1,7 @@
 :root {
 
     // Colors
-    --primary-color: #0B3D91;
+    --primary: #0B3D91;
     --white: #ffffff;
     --black: #000000;
     --danger: #F64137;
@@ -11,5 +11,9 @@
     --base-font-size: 16px;
     --large-font-size: 20px;
     --header-min-height: 86px;
+
+    // Border
+    --border-radius-default: 4px;
+
 
 }

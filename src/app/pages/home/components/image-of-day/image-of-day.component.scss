@@ -1,0 +1,13 @@
+section{
+  height: calc(100vh - var(--header-min-height));
+}
+
+.background-image{
+  object-fit: cover;
+  filter: grayscale(0.8);
+  width: 100%;
+}
+
+.to-learn-more-content{
+  width: 10rem;
+}

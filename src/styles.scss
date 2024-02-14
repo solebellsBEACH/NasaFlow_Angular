@@ -6,4 +6,19 @@
     font-family: 'Public Sans', sans-serif;
     margin: 0px;
     padding: 0px;
+
+    transition: all 0.4s ease-in-out;
+}
+
+button{
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  font-size: medium;
+  color:var(--white);
+  border-radius: var(--border-radius-default);
+  &:hover{
+  filter:brightness(0.8);
+  font-size: large;
+  }
 }
