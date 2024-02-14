@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { LayoutComponent } from './layout/layout.component';
-import { HeaderComponent } from './header/header.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     provideClientHydration()
