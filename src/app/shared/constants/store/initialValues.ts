@@ -9,7 +9,8 @@ const DefaultInitialProps: IDefaultStateProps = {
 export const ImageOfDayInitialValue: IImageOfDay = {
   ...DefaultInitialProps,
   data:{
-    imageOfDayList: null
+    imageOfDayList: null,
+    imageOfDay: null
   }
 }
 

@@ -7,3 +7,11 @@ export const selectImageOfDayState = createSelector(
     selectAppStateFeature,
     (state:IAppState) => state.imageOfDay
 );
+
+export const selectImageOfDay = createSelector(
+  selectAppStateFeature,
+  (state:IAppState) => state.imageOfDay.data.imageOfDay
+);
+
+
+

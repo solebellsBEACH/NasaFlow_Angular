@@ -5,6 +5,8 @@ export interface IImageOfDay extends IDefaultStateProps {
   data:{
     imageOfDayList:
     IGetImageOfDayResponse[] | null
+
+    imageOfDay: IGetImageOfDayResponse | null
   }
 }
 

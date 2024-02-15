@@ -21,7 +21,8 @@ export const appReducer = createReducer(
     imageOfDay: {
       ...state.imageOfDay,
       data:{
-        imageOfDayList
+        imageOfDayList,
+        imageOfDay:imageOfDayList[0]
       },
       loading: false,
       error: false,

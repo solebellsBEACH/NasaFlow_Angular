@@ -1,7 +1,7 @@
 <section
 class="d-flex w-100vw"
 >
-<img class="background-image" [src]="url" alt=""/>
+<img class="background-image"  [src]="(selectImageOfDay$ | async)?.url" alt=""/>
 <div class="position-absolute bg-white p-3 m-5">
   <h1 class="text-uppercase to-learn-more-content">To learn more, click below</h1>
   <button>learn more</button>
