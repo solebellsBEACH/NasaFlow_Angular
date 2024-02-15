@@ -7,6 +7,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
+import { PlanetaryService } from './services/http/planetary.service';
+import { ApiHandleService } from './services/http/api-handle.service';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './root-store/app/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './root-store/app/app.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +24,14 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    StoreModule.forRoot({ app: appReducer, }),
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    PlanetaryService,
+    ApiHandleService
   ],
   bootstrap: [AppComponent]
 })
