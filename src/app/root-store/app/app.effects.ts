@@ -9,15 +9,15 @@ import { IGetImageOfDayResponse } from '../../shared/intefaces/http/response';
 
 @Injectable()
 export class AppEffects {
-  loadGetImageOfDay$ = createEffect(() =>
+  loadGetImagesOfDay$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromAppActions.loadGetImageOfDay),
+      ofType(fromAppActions.loadGetImagesOfDay),
       switchMap((props) =>
         this.planetaryService.getImageOfDay(props.params).pipe(
           map((imageOfDayList: IGetImageOfDayResponse[]) => {
-            return fromAppActions.loadGetImageOfDaySuccess({ imageOfDayList });
+            return fromAppActions.loadGetImagesOfDaySuccess({ imageOfDayList });
           }),
-          catchError((error) => of(fromAppActions.loadGetImageOfDayFailure())),
+          catchError((error) => of(fromAppActions.loadGetImagesOfDayFailure())),
         ),
       ),
     ),

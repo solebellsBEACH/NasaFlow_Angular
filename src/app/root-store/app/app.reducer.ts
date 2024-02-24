@@ -8,7 +8,7 @@ export const initialState: IAppState = AppStateInitialValue;
 
 export const appReducer = createReducer(
   initialState,
-  on(appActions.loadGetImageOfDay, (state) => ({
+  on(appActions.loadGetImagesOfDay, (state) => ({
     ...state,
     imageOfDay: {
       ...state.imageOfDay,
@@ -16,20 +16,20 @@ export const appReducer = createReducer(
       error: false,
     },
   })),
-  on(appActions.loadGetImageOfDaySuccess, (state, { imageOfDayList }) => ({
+  on(appActions.loadGetImagesOfDaySuccess, (state, { imageOfDayList }) => ({
     ...state,
     imageOfDay: {
       ...state.imageOfDay,
-      data:{
+      data: {
         imageOfDayList,
-        imageOfDay:imageOfDayList[0]
+        imageOfDay: imageOfDayList[0]
       },
       loading: false,
       error: false,
     },
 
   })),
-  on(appActions.loadGetImageOfDayFailure, (state) => ({
+  on(appActions.loadGetImagesOfDayFailure, (state) => ({
     ...state,
     imageOfDay: {
       ...state.imageOfDay,
