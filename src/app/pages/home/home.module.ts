@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ImageOfDayComponent } from './components/image-of-day/image-of-day.component';
+import { ImageOfDayService } from './components/image-of-day/image-of-day.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,11 @@ import { ImageOfDayComponent } from './components/image-of-day/image-of-day.comp
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+
+  ],
+  providers: [
+    ImageOfDayService,
   ]
 })
 export class HomeModule { }

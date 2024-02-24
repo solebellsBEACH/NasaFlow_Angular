@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2 } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { appRoutes } from './app-routing.module';
@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     provideClientHydration(),
     PlanetaryService,
-    ApiHandleService
+    ApiHandleService,
   ],
   bootstrap: [AppComponent]
 })
