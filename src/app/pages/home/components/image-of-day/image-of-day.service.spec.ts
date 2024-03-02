@@ -16,11 +16,11 @@ describe('ImageOfDayService', () => {
   });
 
   it('should return length multiplicated to widthDivisorRelation', () => {
-    expect(service.getWidthByLength(10)).toEqual(13);
+    expect(service.getWidthByLength(10)).toEqual(16);
   });
 
   it('should return length multiplicated to widthDivisorRelation with px to scss', () => {
-    expect(service.getContentTextWidth('0123456789')).toEqual('13px');
+    expect(service.getContentTextWidth('0123456789')).toEqual('16px');
   });
 
   it('should return ideal width to the content text to 768px resolution', () => {

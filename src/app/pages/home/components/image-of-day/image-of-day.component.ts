@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IStore } from '../../../../shared/intefaces/store';
 import { loadGetImagesOfDay } from '../../../../root-store/app/app.actions';
@@ -13,6 +13,7 @@ import { ApplicationService } from '../../../../services/http/application.servic
   selector: 'app-image-of-day',
   templateUrl: './image-of-day.component.html',
   styleUrl: './image-of-day.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
