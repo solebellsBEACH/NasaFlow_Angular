@@ -1,11 +1,13 @@
-<section class="d-flex w-100vw">
+<section class="d-flex w-100vw" (mouseenter)="toggleHoverState(true)" (mouseleave)="toggleHoverState(false)">
   <img class="background-image" [src]="(selectImageOfDay$ | async)?.url" alt="" />
-  <div #learningMoreRef class="position-absolute bg-white p-3 m-5 d-flex">
-    <div>
-      <h1 class="text-uppercase to-learn-more-content">To learn more, click below</h1>
+  <div class="position-absolute bg-white p-3 m-5 d-flex flex-column flex-sm-row">
+    <div #learningMoreRef class="align-content-center d-flex flex-column align-content-sm-start trans">
+      <h1 class="text-uppercase to-learn-more-content">To
+        learn more, click below</h1>
       <button>learn more</button>
     </div>
-    <h4 [ngStyle]="{'width': contentTextWidth$ | async}" class="ml-5">
+    <h4 [ngStyle]="onHover ? (contentTextCssExpression$|async) : {'height':'0px', 'width':'0px', 'overflow': 'hidden'}"
+      class="ml-sm-3 preview-text">
       {{previewText}}
     </h4>
   </div>
