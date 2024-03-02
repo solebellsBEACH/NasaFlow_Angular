@@ -11,9 +11,9 @@ section {
 
 .to-learn-more-content {
   width: 10rem;
-  // transition: width 0.4s ease-in-out;
 }
 
 .preview-text {
   transition: width 0.4s ease-in-out;
+  overflow: hidden
 }
