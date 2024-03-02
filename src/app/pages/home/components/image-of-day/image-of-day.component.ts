@@ -22,8 +22,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   selectImageOfDayState$: Observable<IImageOfDay>
   selectImageOfDay$: Observable<IGetImageOfDayResponse | null>
-  contentTextCssExpression$ = new BehaviorSubject({ height: '0px', width: '472px' });
-  larguraSubscription: any;
+  contentTextCssExpression$ = new BehaviorSubject({ height: '0px', width: '0px' });
 
   get previewText(): string {
     let textPreview = '';
@@ -43,19 +42,19 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
     if (this.learningMoreRef?.nativeElement?.clientHeight) {
       this.contentTextCssExpression$
         .next({ ...this.contentTextCssExpression$.getValue(), height: `${this.learningMoreRef?.nativeElement?.clientHeight}px` })
-      this.contentTextCssExpression$.subscribe(console.log)
     }
-
   }
 
   ngOnInit(): void {
-    // this._store.dispatch(loadGetImagesOfDay({ params: { count: 1 } }))
-    // this.larguraSubscription = this._applicationService.windowWidth$.subscribe(console.log)
-    console.log(this._imageOfDayService.getWidthByLength(this.previewText.length))
-    this.contentTextCssExpression$
-      .subscribe(state => {
+    this._applicationService.windowWidth$.subscribe(widthResult => {
+      const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult)
+      const widthByLenght = this._imageOfDayService.getWidthByLength(this.previewText.length)
 
-      })
+      const contentWidth = reponsiveIdealWidth < widthByLenght ? reponsiveIdealWidth : widthByLenght
+
+      this.contentTextCssExpression$
+        .next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` })
+    })
   }
 
   toggleHoverState(isHovering: boolean) {

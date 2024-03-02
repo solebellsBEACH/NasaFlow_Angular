@@ -31,9 +31,4 @@ describe('ImageOfDayService', () => {
     expect(service.getIdealWidth(1024)).toEqual(698);
   });
 
-  it('should return ideal width to the content text to 1024px resolution', () => {
-    expect(service.getIdealWidth(1024)).toEqual(698);
-  });
-
-  // getFormattedPreviewText
 });
