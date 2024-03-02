@@ -4,7 +4,7 @@ import { IStore } from '../../../../shared/intefaces/store';
 import { loadGetImagesOfDay } from '../../../../root-store/app/app.actions';
 import { selectImageOfDay, selectImageOfDayState } from '../../../../root-store/app/app.selectors';
 import { IImageOfDay } from '../../../../shared/intefaces/store/app';
-import { BehaviorSubject, Observable, map, take } from 'rxjs';
+import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 import { IGetImageOfDayResponse } from '../../../../shared/intefaces/http/response';
 import { ImageOfDayService } from './image-of-day.service';
 import { ApplicationService } from '../../../../services/http/application.service';
@@ -27,16 +27,6 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   selectImageOfDay$: Observable<IGetImageOfDayResponse | null>
   contentTextCssExpression$ = new BehaviorSubject({ height: '0px', width: '0px' });
 
-  get previewText(): string {
-    let textPreview = '';
-    let text = 'Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab!'
-
-    this._applicationService.windowWidth$.subscribe(windowWidth => {
-      text = this._imageOfDayService.getFormattedPreviewText(text, windowWidth)
-    })
-    return text
-  }
-
 
   constructor(
     private _store: Store<IStore>,
@@ -57,22 +47,44 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this._getImagesOfDay(1)
+    this._getContentTextCssExpression()
+  }
 
-    this._applicationService.windowWidth$.subscribe(widthResult => {
-      const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult);
-      const widthByLenght = this._imageOfDayService.getWidthByLength(this.previewText.length);
-      const contentWidth = reponsiveIdealWidth < widthByLenght ? reponsiveIdealWidth : widthByLenght;
+  toggleHoverState(isHovering: boolean) {
+    this.onHover = isHovering;
+  }
 
-      this.contentTextCssExpression$
-        .next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` })
-    });
+  getTextFormatted(text?: string) {
+    let formmated = ''
+    this._applicationService.windowWidth$.subscribe(windowWidth => {
+      formmated = this._imageOfDayService.getFormattedPreviewText(text || '', windowWidth)
+    })
+    return formmated
   }
 
   private _getImagesOfDay(count: number) {
     this._store.dispatch(loadGetImagesOfDay({ params: { count } }))
   }
 
-  toggleHoverState(isHovering: boolean) {
-    this.onHover = isHovering;
+  private _getContentTextCssExpression() {
+    this._applicationService.windowWidth$.pipe(
+      switchMap(widthResult => {
+        const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult);
+        const widthByLength = this._imageOfDayService.getWidthByLength(this.previewText.length);
+        const contentWidth = !!widthByLength && widthByLength > reponsiveIdealWidth ? widthByLength : reponsiveIdealWidth;
+        return of(contentWidth);
+      })
+    ).subscribe(contentWidth => {
+      this.contentTextCssExpression$.next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` });
+    });
+  }
+
+  get previewText(): string {
+    let textPreview = '';
+
+    this.selectImageOfDay$.subscribe(state => {
+      textPreview = this.getTextFormatted(state?.explanation)
+    })
+    return textPreview
   }
 }
