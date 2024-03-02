@@ -26,8 +26,12 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   get previewText(): string {
     let textPreview = '';
-    const text = 'Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab!'
-    return text;
+    let text = 'Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab! Make the switch from Jira to GitLab! Break down silos, standardize processes, and accelerate value delivery. Make the switch from Jira to GitLab!'
+
+    this._applicationService.windowWidth$.subscribe(windowWidth => {
+      text = this._imageOfDayService.getFormattedPreviewText(text, windowWidth)
+    })
+    return text
   }
 
   constructor(
@@ -38,6 +42,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
     this.selectImageOfDayState$ = this._store.select(selectImageOfDayState)
     this.selectImageOfDay$ = this._store.select(selectImageOfDay)
   }
+
   ngAfterViewInit(): void {
     if (this.learningMoreRef?.nativeElement?.clientHeight) {
       this.contentTextCssExpression$
@@ -47,14 +52,14 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this._applicationService.windowWidth$.subscribe(widthResult => {
-      const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult)
-      const widthByLenght = this._imageOfDayService.getWidthByLength(this.previewText.length)
+      const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult);
+      const widthByLenght = this._imageOfDayService.getWidthByLength(this.previewText.length);
 
-      const contentWidth = reponsiveIdealWidth < widthByLenght ? reponsiveIdealWidth : widthByLenght
+      const contentWidth = reponsiveIdealWidth < widthByLenght ? reponsiveIdealWidth : widthByLenght;
 
       this.contentTextCssExpression$
         .next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` })
-    })
+    });
   }
 
   toggleHoverState(isHovering: boolean) {
