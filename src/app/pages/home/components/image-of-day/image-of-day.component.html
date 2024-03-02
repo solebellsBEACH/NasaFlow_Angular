@@ -6,7 +6,8 @@
         learn more, click below</h1>
       <button>learn more</button>
     </div>
-    <h4 [ngStyle]="onHover ? (contentTextCssExpression$|async) : {'height':'0px', 'width':'0px', 'overflow': 'hidden'}"
+    <h4 *ngIf="isMobile$ | async"
+      [ngStyle]="onHover ? (contentTextCssExpression$|async) : {'height':'0px', 'width':'0px', 'overflow': 'hidden'}"
       class="ml-sm-3 preview-text">
       {{previewText}}
     </h4>

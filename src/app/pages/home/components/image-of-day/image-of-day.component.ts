@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable, map, take } from 'rxjs';
 import { IGetImageOfDayResponse } from '../../../../shared/intefaces/http/response';
 import { ImageOfDayService } from './image-of-day.service';
 import { ApplicationService } from '../../../../services/http/application.service';
+import { ResolutionBreakpoints } from '../../../../shared/constants/resolutionBreakpoints';
 
 @Component({
   selector: 'app-image-of-day',
@@ -21,6 +22,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   onHover: boolean = false;
 
+  isMobile$: Observable<boolean>
   selectImageOfDayState$: Observable<IImageOfDay>
   selectImageOfDay$: Observable<IGetImageOfDayResponse | null>
   contentTextCssExpression$ = new BehaviorSubject({ height: '0px', width: '0px' });
@@ -35,6 +37,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
     return text
   }
 
+
   constructor(
     private _store: Store<IStore>,
     private _imageOfDayService: ImageOfDayService,
@@ -42,6 +45,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   ) {
     this.selectImageOfDayState$ = this._store.select(selectImageOfDayState)
     this.selectImageOfDay$ = this._store.select(selectImageOfDay)
+    this.isMobile$ = this._applicationService.compareResolutionThan(ResolutionBreakpoints.SM)
   }
 
   ngAfterViewInit(): void {
@@ -52,15 +56,20 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this._getImagesOfDay(1)
+
     this._applicationService.windowWidth$.subscribe(widthResult => {
       const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult);
       const widthByLenght = this._imageOfDayService.getWidthByLength(this.previewText.length);
-
       const contentWidth = reponsiveIdealWidth < widthByLenght ? reponsiveIdealWidth : widthByLenght;
 
       this.contentTextCssExpression$
         .next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` })
     });
+  }
+
+  private _getImagesOfDay(count: number) {
+    this._store.dispatch(loadGetImagesOfDay({ params: { count } }))
   }
 
   toggleHoverState(isHovering: boolean) {

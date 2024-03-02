@@ -5,7 +5,7 @@ export const MobileBreakpoints = {
 }
 
 export const LaptopBreakpoints = {
-  SM: 576,
+  SM: 575,
   MD: 768,
   LG: 1024,
   XLG: 1200,

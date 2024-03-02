@@ -3,13 +3,14 @@ import { textFormattedUtils } from "../../../../shared/utils/textFormatted"
 
 @Injectable()
 export class ImageOfDayService {
-  private readonly _widthDivisorRelation = 1.6
+  private readonly _widthDivisorRelation = 1.4
   private readonly _widthDifference = 326
 
   constructor(
   ) { }
 
   getFormattedPreviewText(text: string, windowWidth: number): string {
+
     const idealLength = this.getIdealLength(windowWidth)
     return textFormattedUtils.truncateText(text, idealLength)
   }
