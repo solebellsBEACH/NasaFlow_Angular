@@ -29,4 +29,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain app-image-of-day', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('app-image-of-day')).toBeTruthy();
+  });
 });
