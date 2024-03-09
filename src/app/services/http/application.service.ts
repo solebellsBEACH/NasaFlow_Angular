@@ -26,6 +26,6 @@ export class ApplicationService {
   }
 
   compareResolutionThan(resolution: number) {
-    return this.windowWidth$.pipe(map(windowWidth => windowWidth >= resolution))
+    return this.windowWidth$.pipe(map(windowWidth => !(windowWidth >= resolution)))
   }
 }
