@@ -23,6 +23,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   onHover: boolean = false;
 
   isMobile$: Observable<boolean>
+  windowWidth$: Observable<number>
   selectImageOfDayState$: Observable<IImageOfDay>
   selectImageOfDay$: Observable<IGetImageOfDayResponse | null>
   contentTextCssExpression$ = new BehaviorSubject({ height: '0px', width: '0px' });
@@ -36,6 +37,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
     this.selectImageOfDayState$ = this._store.select(selectImageOfDayState)
     this.selectImageOfDay$ = this._store.select(selectImageOfDay)
     this.isMobile$ = this._applicationService.compareResolutionThan(ResolutionBreakpoints.SM)
+    this.windowWidth$ = this._applicationService.windowWidth$
   }
 
   ngAfterViewInit(): void {
@@ -56,7 +58,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
 
   getTextFormatted(text?: string) {
     let formmated = ''
-    this._applicationService.windowWidth$.subscribe(windowWidth => {
+    this.windowWidth$.subscribe(windowWidth => {
       formmated = this._imageOfDayService.getFormattedPreviewText(text || '', windowWidth)
     })
     return formmated
@@ -67,16 +69,17 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   }
 
   private _getContentTextCssExpression() {
-    this._applicationService.windowWidth$.pipe(
+    this.windowWidth$.pipe(
       switchMap(widthResult => {
         const reponsiveIdealWidth = this._imageOfDayService.getIdealWidth(widthResult);
         const widthByLength = this._imageOfDayService.getWidthByLength(this.previewText.length);
         const contentWidth = !!widthByLength && widthByLength > reponsiveIdealWidth ? widthByLength : reponsiveIdealWidth;
         return of(contentWidth);
       })
-    ).subscribe(contentWidth => {
-      this.contentTextCssExpression$.next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` });
-    });
+    )
+      .subscribe(contentWidth => {
+        this.contentTextCssExpression$.next({ ...this.contentTextCssExpression$.getValue(), width: `${contentWidth}px` });
+      })
   }
 
   get previewText(): string {

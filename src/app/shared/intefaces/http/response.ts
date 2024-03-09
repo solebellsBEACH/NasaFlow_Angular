@@ -8,6 +8,7 @@ export interface IGetImageOfDayResponse {
   service_version: string;
   title: string;
   url: string;
+  copyright?: string
 }
 
 export type GetImageOfDayResponse = Observable<IGetImageOfDayResponse[]>
