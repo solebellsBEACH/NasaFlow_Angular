@@ -1715,6 +1715,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@ngrx/store-devtools@^17.1.1":
+  version "17.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-17.1.1.tgz#dcbb221da64282f79df696edfe1518e8b6659291"
+  integrity sha512-MCzM44wHzc0eY6FSvPQwuXn1HFst8Y4Ckq7jvlPA202nJYwMZQQJReI5KQNHfGiqe0RpZKov0FUmy6sIyOOt2A==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/store@^17.1.0":
   version "17.1.1"
   resolved "https://registry.npmjs.org/@ngrx/store/-/store-17.1.1.tgz"

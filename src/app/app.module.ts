@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { appRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,10 @@ import { ApplicationService } from './services/http/application.service';
     HttpClientModule,
     StoreModule.forRoot({ app: appReducer, }),
     EffectsModule.forRoot([AppEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
+
   ],
   providers: [
     provideClientHydration(),
