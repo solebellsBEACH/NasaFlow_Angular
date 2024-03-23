@@ -17,7 +17,7 @@ export class AppEffects {
           map((imageOfDayList: IGetImageOfDayResponse[]) => {
             return fromAppActions.loadGetImagesOfDaySuccess({ imageOfDayList });
           }),
-          catchError((error) => of(fromAppActions.loadGetImagesOfDayFailure())),
+          catchError(() => of(fromAppActions.loadGetImagesOfDayFailure())),
         ),
       ),
     ),

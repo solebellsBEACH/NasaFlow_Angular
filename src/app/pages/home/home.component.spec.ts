@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { ImageOfDayComponent } from './components/image-of-day/image-of-day.component';
 import { StoreModule } from '@ngrx/store';
+import { ImageOfDayService } from './components/image-of-day/image-of-day.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -13,6 +14,9 @@ describe('HomeComponent', () => {
       declarations: [HomeComponent, ImageOfDayComponent],
       imports: [
         StoreModule.forRoot({})
+      ],
+      providers: [
+        ImageOfDayService
       ]
     })
       .compileComponents();
@@ -24,5 +28,10 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain app-image-of-day', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('app-image-of-day')).toBeTruthy();
   });
 });

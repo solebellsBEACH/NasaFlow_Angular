@@ -1,9 +1,16 @@
-<section
-class="d-flex w-100vw"
->
-<img class="background-image"  [src]="(selectImageOfDay$ | async)?.url" alt=""/>
-<div class="position-absolute bg-white p-3 m-5">
-  <h1 class="text-uppercase to-learn-more-content">To learn more, click below</h1>
-  <button>learn more</button>
-</div>
+<section class="d-flex w-100vw">
+  <img class="background-image" [src]="(selectImageOfDay$ | async)?.url" alt="" />
+  <div class="position-absolute bg-white p-3 m-5 d-flex flex-column flex-sm-row">
+    <div #learningMoreRef class="align-content-center d-flex flex-column align-content-sm-start trans">
+      <h1 (mouseenter)="toggleHoverState(true)" (mouseleave)="toggleHoverState(false)"
+        class="text-uppercase to-learn-more-content">To
+        learn more, click below</h1>
+      <button>learn more</button>
+    </div>
+    <h4 *ngIf="(selectImageOfDay$ | async) as imageOfDay"
+      [ngStyle]="onHover  && !(isMobile$ | async) ? (contentTextCssExpression$ | async): {'height': '0px', 'width': '0px', 'overflow': 'hidden'} "
+      class="ml-sm-3 preview-text">
+      {{ getTextFormatted(imageOfDay.explanation) }}
+    </h4>
+  </div>
 </section>
