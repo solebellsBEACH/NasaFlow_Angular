@@ -5,18 +5,21 @@ import { tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiHandleService {
 
   private nasaUrl = "https://api.nasa.gov/"
   private apiKey = "PsgkzRbOk1CDAFnNYY7dnK3Wxkp7gybaHKFgclDP"
 
-  constructor(public httpClient: HttpClient) {}
+  constructor(public httpClient: HttpClient) { }
 
-  Get(url:string, params?: Object ) {
+  Get(url: string, params?: any) {
     return this.httpClient
       .get(this.
-        createURL(this.nasaUrl,url, this.apiKey ), {params: this.
-        createParams(params)})
+        createURL(this.nasaUrl, url, this.apiKey), {
+        params: this.
+          createParams(params)
+      })
       .pipe(tap((x) => this.HandleResponse(x)));
   }
 
@@ -26,7 +29,7 @@ export class ApiHandleService {
     }
   }
 
-  createParams(params?: Object):HttpParams {
+  createParams(params?: Object): HttpParams {
     let httpParams = new HttpParams();
     if (params) {
       Object.entries(params).forEach(([key, value]) => {
@@ -36,7 +39,7 @@ export class ApiHandleService {
     return httpParams;
   }
 
-  createURL(path:string, route:string, apiKey:string):string{
+  createURL(path: string, route: string, apiKey: string): string {
     return `${path}${route}?api_key=${apiKey}`
   }
 
