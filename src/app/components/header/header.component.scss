@@ -1,10 +1,9 @@
 header {
-    width: 100vw;
-    height: var(--header-min-height);
-    background-color: var(--black);
+  height: var(--header-min-height);
+  background-color: var(--black);
 }
 
 img {
-    height: inherit;
-    padding: 0.5rem;
+  height: inherit;
+  padding: 0.5rem;
 }
