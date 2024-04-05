@@ -1,5 +1,5 @@
-import { IDefaultStateProps } from "../../intefaces/store";
-import { IAppState, IImageOfDay } from "../../intefaces/store/app";
+import { IDefaultStateProps } from "../../interfaces/store";
+import { IAppState, IImageOfDay } from "../../interfaces/store/app";
 
 const DefaultInitialProps: IDefaultStateProps = {
   error: false,
@@ -8,7 +8,7 @@ const DefaultInitialProps: IDefaultStateProps = {
 
 export const ImageOfDayInitialValue: IImageOfDay = {
   ...DefaultInitialProps,
-  data:{
+  data: {
     imageOfDayList: null,
     imageOfDay: null
   }
@@ -16,5 +16,5 @@ export const ImageOfDayInitialValue: IImageOfDay = {
 
 
 export const AppStateInitialValue: IAppState = {
- imageOfDay:ImageOfDayInitialValue
+  imageOfDay: ImageOfDayInitialValue
 }
