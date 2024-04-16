@@ -48,7 +48,6 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this._getImagesOfDay(1)
     this._getContentTextCssExpression()
   }
 
@@ -64,9 +63,7 @@ export class ImageOfDayComponent implements OnInit, AfterViewInit {
     return formmated
   }
 
-  private _getImagesOfDay(count: number) {
-    this._store.dispatch(loadGetImagesOfDay({ params: { count } }))
-  }
+
 
   private _getContentTextCssExpression() {
     this.windowWidth$.pipe(

@@ -13,5 +13,16 @@ export const selectImageOfDay = createSelector(
   (state: IAppState) => state.imageOfDay.data.imageOfDay
 );
 
+export const selectImageOfDayLoading = createSelector(
+  selectAppStateFeature,
+  (state: IAppState) => state.imageOfDay.loading
+);
+
+export const selectImageOfDayError = createSelector(
+  selectAppStateFeature,
+  (state: IAppState) => state.imageOfDay.error
+);
+
+
 
 
