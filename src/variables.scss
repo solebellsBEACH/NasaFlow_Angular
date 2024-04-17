@@ -1,19 +1,20 @@
 :root {
 
-    // Colors
-    --primary: #0B3D91;
-    --white: #ffffff;
-    --black: #000000;
-    --danger: #F64137;
-    --gray: #B9B9BB;
+  // Colors
+  --primary: #0B3D91;
+  --white: #ffffff;
+  --black: #000000;
+  --danger: #F64137;
+  --gray: #B9B9BB;
 
-    // Sizes
-    --base-font-size: 16px;
-    --large-font-size: 20px;
-    --header-min-height: 86px;
+  // Sizes
+  --base-font-size: 16px;
+  --large-font-size: 20px;
+  --header-min-height: 86px;
 
-    // Border
-    --border-radius-default: 4px;
+  // Border
+  --border-radius-default: 4px;
 
-
+  // Component sizes
+  --news-block-height: 400px;
 }

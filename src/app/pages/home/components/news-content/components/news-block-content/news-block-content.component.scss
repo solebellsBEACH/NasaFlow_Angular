@@ -1,0 +1,18 @@
+.news-block {
+  height: var(--news-block-height);
+
+  border: 1px solid red;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-25-h-50 {
+  // width: 25%;
+  height: calc(var(--news-block-height)*0.5 - 0.5rem);
+}

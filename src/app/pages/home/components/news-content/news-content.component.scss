@@ -1,9 +1,8 @@
 .content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60rem;
+  flex-direction: column;
 
+  width: 60rem;
   margin: 2rem 0px;
 
   @media(max-width:1024px) {
