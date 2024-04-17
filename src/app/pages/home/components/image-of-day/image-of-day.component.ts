@@ -7,7 +7,7 @@ import { IImageOfDay } from '../../../../shared/interfaces/store/app';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 import { IGetImageOfDayResponse } from '../../../../shared/interfaces/http/response';
 import { ImageOfDayService } from './image-of-day.service';
-import { ApplicationService } from '../../../../services/http/application.service';
+import { ApplicationService } from '../../../../services/application/application.service';
 import { ResolutionBreakpoints } from '../../../../shared/constants/resolutionBreakpoints';
 
 @Component({

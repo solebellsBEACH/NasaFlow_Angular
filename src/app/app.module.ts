@@ -14,7 +14,7 @@ import { appReducer } from './root-store/app/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './root-store/app/app.effects';
 import { HttpClientModule } from '@angular/common/http';
-import { ApplicationService } from './services/http/application.service';
+import { ApplicationService } from './services/application/application.service';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 
 @NgModule({
