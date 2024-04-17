@@ -4,16 +4,17 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ImageOfDayComponent } from './components/image-of-day/image-of-day.component';
 import { ImageOfDayService } from './components/image-of-day/image-of-day.service';
+import { LoadingPageComponent } from '../../components/loading-page/loading-page.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ImageOfDayComponent
+    ImageOfDayComponent,
+    LoadingPageComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-
   ],
   providers: [
     ImageOfDayService,

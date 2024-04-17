@@ -5,7 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import * as fromAppActions from './app.actions';
-import { IGetImageOfDayResponse } from '../../shared/intefaces/http/response';
+import { IGetImageOfDayResponse } from '../../shared/interfaces/http/response';
 
 @Injectable()
 export class AppEffects {

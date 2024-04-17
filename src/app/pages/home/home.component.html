@@ -1,3 +1,4 @@
-<div>
+<app-loading-page *ngIf="( selectImageOfDayLoading$ | async)"></app-loading-page>
+<div *ngIf="!( selectImageOfDayLoading$ | async)">
   <app-image-of-day></app-image-of-day>
 </div>

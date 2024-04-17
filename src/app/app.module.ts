@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { appRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,12 +15,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './root-store/app/app.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationService } from './services/http/application.service';
+import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { ApplicationService } from './services/http/application.service';
     HttpClientModule,
     StoreModule.forRoot({ app: appReducer, }),
     EffectsModule.forRoot([AppEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
+
   ],
   providers: [
     provideClientHydration(),

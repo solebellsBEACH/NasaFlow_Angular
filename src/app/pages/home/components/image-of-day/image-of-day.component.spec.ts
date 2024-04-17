@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ImageOfDayComponent } from './image-of-day.component';
 import { Store, StoreModule } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
-import { IStore } from '../../../../shared/intefaces/store';
+import { IStore } from '../../../../shared/interfaces/store';
 import { ImageOfDayService } from './image-of-day.service';
 import { BehaviorSubject } from 'rxjs';
 import { ResolutionBreakpoints } from '../../../../shared/constants/resolutionBreakpoints';
