@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60rem;
+
+  margin: 2rem 0px;
+
+  @media(max-width:1024px) {
+    width: 45rem;
+  }
+
+  @media(max-width:768px) {
+    width: 95vw;
+  }
+}
+
+a {
+  color: black;
+  font-weight: 700;
+}

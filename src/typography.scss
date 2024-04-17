@@ -1,37 +1,41 @@
 // Estilos para títulos
 h1 {
-    font-size: 2.5rem; // Exemplo de tamanho de fonte para h1
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 2.5rem; // Exemplo de tamanho de fonte para h1
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 2rem; // Exemplo de tamanho de fonte para h2
-    font-weight: bold;
-    margin-bottom: 0.8rem;
+  font-size: 2rem; // Exemplo de tamanho de fonte para h2
+  font-weight: bold;
 }
 
 // Estilos para parágrafos
 p {
-    font-size: 1rem; // Exemplo de tamanho de fonte para parágrafos
-    line-height: 1.5; // Espaçamento entre linhas
-    margin-bottom: 1.5rem;
+  font-size: 1rem; // Exemplo de tamanho de fonte para parágrafos
+  line-height: 1.5; // Espaçamento entre linhas
 }
 
 // Outras tags HTML comuns
 a {
-    color: #007bff; // Exemplo de cor para links
-    text-decoration: none;
+  color: #007bff; // Exemplo de cor para links
+  text-decoration: none;
 }
+
+a:hover {
+  text-decoration: none;
+  font-size: large;
+  transition: font-size 0.4s ease-in-out;
+}
+
 
 // Estilos para a tag de cabeçalho global
 header {
-    background-color: #000000; // Exemplo de cor de fundo para o cabeçalho
-    color: #ffffff; // Exemplo de cor de texto para o cabeçalho
+  background-color: #000000; // Exemplo de cor de fundo para o cabeçalho
+  color: #ffffff; // Exemplo de cor de texto para o cabeçalho
 }
 
 // Estilos para a tag de rodapé global
 footer {
-    background-color: #000000; // Exemplo de cor de fundo para o rodapé
-    color: #ffffff; // Exemplo de cor de texto para o rodapé
+  background-color: #000000; // Exemplo de cor de fundo para o rodapé
+  color: #ffffff; // Exemplo de cor de texto para o rodapé
 }
