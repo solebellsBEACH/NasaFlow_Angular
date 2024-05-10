@@ -1,0 +1,24 @@
+section {
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1000;
+}
+
+h5 {
+  font-weight: bold;
+  color: white;
+
+}
+
+img {
+  object-fit: cover;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  filter: grayscale(0.6);
+  position: absolute;
+  padding: 0.1rem;
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
