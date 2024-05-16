@@ -33,6 +33,11 @@ describe('NewsBlockInformationsComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render timeRead', () => {
+    const compiled = fixture.nativeElement.textContent;
+    expect(compiled).toContain(data.readTime);
+  })
+
   describe('Testing truncate pipe', () => {
 
     it('should render text with 80 caracters', () => {
