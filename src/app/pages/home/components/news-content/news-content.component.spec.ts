@@ -2,6 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsContentComponent } from './news-content.component';
 import { GitHubLinks } from '../../../../shared/constants/links';
+import { NewsBlockContentComponent } from './components/news-block-content/news-block-content.component';
+import { TruncateTextPipe } from '../../../../shared/pipes/truncate-text.pipe';
+import { NewsBlockInformationsComponent } from './components/news-block-informations/news-block-informations.component';
 
 describe('NewsContentComponent', () => {
   let component: NewsContentComponent;
@@ -11,7 +14,10 @@ describe('NewsContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NewsContentComponent]
+      declarations: [NewsContentComponent,
+        NewsBlockContentComponent,
+        TruncateTextPipe,
+        NewsBlockInformationsComponent]
     })
       .compileComponents();
 
