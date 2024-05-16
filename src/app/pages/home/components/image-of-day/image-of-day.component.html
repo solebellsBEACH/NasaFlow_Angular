@@ -1,6 +1,6 @@
 <section class="d-flex w-100vw">
   <img class="background-image" [src]="(selectImageOfDay$ | async)?.url" alt="" />
-  <div class="bg-white p-3 m-5 d-flex flex-column flex-sm-row">
+  <div class="position-absolute bg-white p-3 m-5 d-flex flex-column flex-sm-row">
     <div #learningMoreRef class="align-content-center d-flex flex-column align-content-sm-start trans">
       <h1 (mouseenter)="toggleHoverState(true)" (mouseleave)="toggleHoverState(false)"
         class="text-uppercase to-learn-more-content">To

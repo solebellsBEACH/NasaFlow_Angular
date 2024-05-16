@@ -12,7 +12,6 @@ import { NewsContentModule } from './components/news-content/news-content.module
     HomeComponent,
     ImageOfDayComponent,
     LoadingPageComponent,
-
   ],
   imports: [
     CommonModule,
