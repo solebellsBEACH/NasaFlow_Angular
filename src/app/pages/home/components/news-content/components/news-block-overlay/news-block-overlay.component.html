@@ -1,0 +1,2 @@
+<h5 *ngIf="!(isMobile$ | async)">{{text | truncateText: maxTitle}}</h5>
+<h5 *ngIf="isMobile$ | async">{{text}}</h5>

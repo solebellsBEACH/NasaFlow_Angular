@@ -1,7 +1,6 @@
 <section class="h-100 trasition-all" [style.backgroundImage]="'url(' + data.image + ')'">
   <div class="p-1 bg-primary">
-    <h5 *ngIf="!(isMobile$ | async)">{{data.title | truncateText: maxTitleLength}}</h5>
-    <h5 *ngIf="isMobile$ | async">{{data.title}}</h5>
+    <app-news-block-overlay [text]="data.title" [maxTitle]="maxTitleLength"></app-news-block-overlay>
     <p *ngIf="hasReadTime" class="read-time">{{ data.readTime }} min read</p>
   </div>
 </section>
