@@ -16,15 +16,18 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomeComponent,
+      declarations: [
+        HomeComponent,
         ImageOfDayComponent,
         NewsContentComponent,
         NewsBlockContentComponent,
         NewsBlockInformationsComponent,
-        TruncateTextPipe],
+        TruncateTextPipe
+      ],
       providers: [
         provideMockStore({ initialState: unitInitialStoreState }),
-        ImageOfDayService
+        ImageOfDayService,
+        TruncateTextPipe
       ]
     }).compileComponents();
 

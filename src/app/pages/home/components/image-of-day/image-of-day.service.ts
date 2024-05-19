@@ -1,5 +1,6 @@
+import { TruncateTextPipe } from './../../../../shared/pipes/truncate-text.pipe';
 import { Injectable } from "@angular/core"
-import { textFormattedUtils } from "../../../../shared/utils/textFormatted"
+
 
 @Injectable()
 export class ImageOfDayService {
@@ -7,12 +8,12 @@ export class ImageOfDayService {
   private readonly _widthDifference = 326
 
   constructor(
+    private readonly _truncateTextPipe: TruncateTextPipe
   ) { }
 
   getFormattedPreviewText(text: string, windowWidth: number): string {
-
     const idealLength = this.getIdealLength(windowWidth)
-    return textFormattedUtils.truncateText(text, idealLength)
+    return this._truncateTextPipe.transform(text, idealLength)
   }
 
   getContentTextWidth(text: string): string {
