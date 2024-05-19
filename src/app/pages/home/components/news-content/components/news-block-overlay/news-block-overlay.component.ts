@@ -14,10 +14,14 @@ export class NewsBlockOverlayComponent {
 
   isMobile$: Observable<boolean>;
 
-  onHover: boolean = true;
+  onFocus: boolean = false;
 
   constructor(private readonly _applicationService: ApplicationService) {
     this.isMobile$ = this._applicationService.compareResolutionThan(ResolutionBreakpoints.MD)
+  }
+
+  setOnFocus(value: boolean) {
+    this.onFocus = value
   }
 
 }
