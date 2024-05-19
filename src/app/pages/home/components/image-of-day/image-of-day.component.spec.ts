@@ -10,6 +10,7 @@ import { ResolutionBreakpoints } from '../../../../shared/constants/resolutionBr
 import mockData from '../../../../../mock/home/components/image-of-day.mock';
 import { appReducer } from '../../../../root-store/app/app.reducer';
 import { unitInitialStoreState } from '../../../../../mock/store/unitInitialState';
+import { TruncateTextPipe } from '../../../../shared/pipes/truncate-text.pipe';
 
 
 describe('ImageOfDayComponent', () => {
@@ -19,7 +20,7 @@ describe('ImageOfDayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ImageOfDayComponent],
+      declarations: [ImageOfDayComponent, TruncateTextPipe],
       imports: [
         StoreModule.forRoot({ app: appReducer, }),
       ],
@@ -29,7 +30,8 @@ describe('ImageOfDayComponent', () => {
           {
             initialState: unitInitialStoreState
           }
-        )
+        ),
+        TruncateTextPipe
       ]
     })
       .compileComponents();

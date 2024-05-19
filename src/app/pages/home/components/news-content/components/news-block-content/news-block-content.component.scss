@@ -1,0 +1,16 @@
+.news-block {
+  height: var(--news-block-height);
+
+  @media(max-width:768px) {
+    height: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+.shorts {
+  width: 100%;
+
+  @media(min-width:768px) {
+    height: 50%;
+  }
+}

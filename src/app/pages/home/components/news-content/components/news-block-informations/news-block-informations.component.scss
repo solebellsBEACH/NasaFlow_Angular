@@ -1,0 +1,26 @@
+section {
+  padding: 0.5rem;
+  z-index: 1000;
+
+  filter: grayscale(0.6);
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+
+h5 {
+  font-weight: bold;
+  color: white;
+  font-size: 90%;
+}
+
+.read-time {
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: .7rem;
+  line-height: 1em;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
