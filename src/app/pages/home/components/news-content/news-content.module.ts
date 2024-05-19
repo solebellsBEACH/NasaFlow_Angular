@@ -4,18 +4,18 @@ import { NewsContentComponent } from './news-content.component';
 import { HomeRoutingModule } from '../../home-routing.module';
 import { NewsBlockContentComponent } from './components/news-block-content/news-block-content.component';
 import { NewsBlockInformationsComponent } from './components/news-block-informations/news-block-informations.component';
-import { TruncateTextPipe } from '../../../../shared/pipes/truncate-text.pipe';
+import { SharedModule } from '../../../../shared/shared.module';
 
 @NgModule({
   declarations: [
     NewsContentComponent,
     NewsBlockContentComponent,
     NewsBlockInformationsComponent,
-    TruncateTextPipe
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    SharedModule
   ],
   exports: [NewsContentComponent]
 })

@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { ImageOfDayService } from './image-of-day.service';
+import { TruncateTextPipe } from '../../../../shared/pipes/truncate-text.pipe';
 
 describe('ImageOfDayService', () => {
   let service: ImageOfDayService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ImageOfDayService]
+      providers: [ImageOfDayService, TruncateTextPipe]
     });
     service = TestBed.inject(ImageOfDayService);
   });
