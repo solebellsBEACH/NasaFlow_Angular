@@ -1,2 +1,10 @@
 <h5 *ngIf="!(isMobile$ | async)">{{text | truncateText: maxTitle}}</h5>
-<h5 *ngIf="isMobile$ | async">{{text}}</h5>
+<div *ngIf="isMobile$ | async">
+  <div class="d-flex justify-content-start align-items-center text-white">
+    <h3>Read topic</h3>
+    <i class="bi bi-caret-down-fill ml-2" style="font-size:30px;"></i>
+  </div>
+  <!-- <h5>
+    {{text}}
+  </h5> -->
+</div>

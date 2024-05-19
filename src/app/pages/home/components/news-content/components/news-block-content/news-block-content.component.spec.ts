@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NewsBlockContentComponent } from './news-block-content.component';
 import { NewsBlockInformationsComponent } from '../news-block-informations/news-block-informations.component';
 import { TruncateTextPipe } from '../../../../../../shared/pipes/truncate-text.pipe';
+import { NewsContentModule } from '../../news-content.module';
 
 describe('NewsBlockContentComponent', () => {
   let component: NewsBlockContentComponent;
@@ -10,7 +11,9 @@ describe('NewsBlockContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NewsBlockContentComponent, NewsBlockInformationsComponent, TruncateTextPipe]
+      imports: [
+        NewsContentModule,
+      ],
     })
       .compileComponents();
 

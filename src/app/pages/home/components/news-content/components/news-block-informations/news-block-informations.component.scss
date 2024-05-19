@@ -10,11 +10,20 @@ section {
 }
 
 .read-time {
-
   font-style: normal;
   font-weight: 500;
   font-size: .7rem;
   line-height: 1em;
   letter-spacing: 3.5px;
   text-transform: uppercase;
+
+  color: white;
+}
+
+.text-content {
+  background: var(--primary) !important;
+
+  @media(max-width:768px) {
+    background: transparent !important;
+  }
 }

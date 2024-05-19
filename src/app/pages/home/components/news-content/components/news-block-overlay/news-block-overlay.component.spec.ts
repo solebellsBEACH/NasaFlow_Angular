@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsBlockOverlayComponent } from './news-block-overlay.component';
+import { NewsContentModule } from '../../news-content.module';
 
 describe('NewsBlockOverlayComponent', () => {
   let component: NewsBlockOverlayComponent;
@@ -8,10 +9,12 @@ describe('NewsBlockOverlayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NewsBlockOverlayComponent]
+      imports: [
+        NewsContentModule,
+      ],
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(NewsBlockOverlayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
