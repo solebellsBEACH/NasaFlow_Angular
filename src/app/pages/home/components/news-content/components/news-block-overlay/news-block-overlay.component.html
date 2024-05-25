@@ -1,0 +1,17 @@
+<h5 *ngIf="!(isMobile$ | async)">{{text | truncateText: maxTitle}}</h5>
+<div *ngIf="isMobile$ | async">
+  <div *ngIf="!onFocus" (click)="setOnFocus(true)"
+    class="d-flex justify-content-start align-items-center text-white transition-all">
+    <h3 class="transition-all">Open topic</h3>
+    <i class="bi bi-caret-down-fill ml-2 transition-all" style="font-size:30px;"></i>
+  </div>
+  <div *ngIf="onFocus">
+    <h5 class="transition-all">
+      {{text}}
+    </h5>
+    <div (click)="setOnFocus(false)" class="d-flex justify-content-start align-items-center text-white transition-all">
+      <h3 class="transition-all">Close topic</h3>
+      <i class="bi bi-caret-up-fill ml-2 transition-all" style="font-size:30px;"></i>
+    </div>
+  </div>
+</div>

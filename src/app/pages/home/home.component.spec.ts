@@ -4,10 +4,8 @@ import { ImageOfDayComponent } from './components/image-of-day/image-of-day.comp
 import { ImageOfDayService } from './components/image-of-day/image-of-day.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { unitInitialStoreState } from '../../../mock/store/unitInitialState';
-import { NewsContentComponent } from './components/news-content/news-content.component';
-import { NewsBlockInformationsComponent } from './components/news-content/components/news-block-informations/news-block-informations.component';
-import { NewsBlockContentComponent } from './components/news-content/components/news-block-content/news-block-content.component';
 import { TruncateTextPipe } from '../../shared/pipes/truncate-text.pipe';
+import { NewsContentModule } from './components/news-content/news-content.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -19,16 +17,17 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         ImageOfDayComponent,
-        NewsContentComponent,
-        NewsBlockContentComponent,
-        NewsBlockInformationsComponent,
         TruncateTextPipe
+      ],
+      imports: [
+        NewsContentModule,
       ],
       providers: [
         provideMockStore({ initialState: unitInitialStoreState }),
         ImageOfDayService,
         TruncateTextPipe
-      ]
+      ],
+
     }).compileComponents();
 
     store = TestBed.inject(MockStore);
