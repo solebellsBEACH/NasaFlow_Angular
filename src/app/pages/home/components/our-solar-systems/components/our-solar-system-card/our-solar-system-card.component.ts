@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './our-solar-system-card.component.scss'
 })
 export class OurSolarSystemCardComponent {
-  @Input() cardData = { id: 1, name: 'Planets' }
+  @Input() cardData = { id: 1, name: 'Planets', imageUrl: '' }
 }
