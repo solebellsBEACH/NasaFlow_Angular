@@ -1,3 +1,4 @@
+import { ourSolarSystemsCard } from './../../../../shared/constants/ourSolarSystems';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './our-solar-systems.component.scss'
 })
 export class OurSolarSystemsComponent {
-
+  ourSolarSystemsCardList = ourSolarSystemsCard
 }
