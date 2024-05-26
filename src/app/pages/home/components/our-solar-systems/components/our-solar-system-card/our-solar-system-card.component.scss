@@ -1,3 +1,8 @@
 .our-solar-system-card {
-  height: 400px;
+  --our-solar-system-card-height: 400px;
+  height: var(--our-solar-system-card-height);
+
+  &:hover {
+    height: calc(var(--our-solar-system-card-height) - 100px);
+  }
 }

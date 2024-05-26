@@ -1,4 +1,6 @@
-export const ourSolarSystemsCard = [
+import { IOurSolarSystemsCard } from "../interfaces/components/home/our-solar-systems";
+
+export const ourSolarSystemsCard: IOurSolarSystemsCard[] = [
   {
     id: 1,
     name: 'Planets',

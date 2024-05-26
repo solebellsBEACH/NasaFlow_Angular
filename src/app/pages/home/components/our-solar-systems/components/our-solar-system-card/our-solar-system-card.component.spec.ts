@@ -10,11 +10,12 @@ describe('OurSolarSystemCardComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [OurSolarSystemCardComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(OurSolarSystemCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
