@@ -8,11 +8,13 @@ import { NewsContentModule } from './components/news-content/news-content.module
 import { ImageOfDayModule } from './components/image-of-day/image-of-day.module';
 import { SharedModule } from '../../shared/shared.module';
 import { OurSolarSystemsModule } from './components/our-solar-systems/our-solar-systems.module';
+import { ImageDividerComponent } from '../../components/image-divider/image-divider.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoadingPageComponent,
+    ImageDividerComponent,
   ],
   imports: [
     CommonModule,
