@@ -1,0 +1,19 @@
+.our-solar-system-card {
+  --our-solar-system-card-height: 400px;
+  height: var(--our-solar-system-card-height);
+
+  &:hover {
+    height: calc(var(--our-solar-system-card-height) - 100px);
+  }
+}
+
+.rounded-icon {
+  height: 26px;
+  width: 26px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 5px;
+}

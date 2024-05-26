@@ -1,0 +1,8 @@
+<a [href]="cardData.redirectUrl" [style.backgroundImage]="'url(' + cardData.imageUrl + ')'"
+  class="transition-all our-solar-system-card d-flex align-items-end justify-content-start px-3 py-2 rounded-1"
+  [id]="cardData.id">
+  <div class="d-flex justify-content-center align-content-center">
+    <h4 class="text-white d-flex">{{cardData.name}}</h4>
+    <i class="bi bi-arrow-right rounded-icon bg-danger ml-2"></i>
+  </div>
+</a>

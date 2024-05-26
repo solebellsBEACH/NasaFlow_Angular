@@ -7,6 +7,7 @@ import { LoadingPageComponent } from '../../components/loading-page/loading-page
 import { NewsContentModule } from './components/news-content/news-content.module';
 import { ImageOfDayModule } from './components/image-of-day/image-of-day.module';
 import { SharedModule } from '../../shared/shared.module';
+import { OurSolarSystemsModule } from './components/our-solar-systems/our-solar-systems.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from '../../shared/shared.module';
     HomeRoutingModule,
     ImageOfDayModule,
     NewsContentModule,
+    OurSolarSystemsModule,
     SharedModule
   ],
   providers: [

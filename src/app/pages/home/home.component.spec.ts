@@ -6,6 +6,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { unitInitialStoreState } from '../../../mock/store/unitInitialState';
 import { TruncateTextPipe } from '../../shared/pipes/truncate-text.pipe';
 import { NewsContentModule } from './components/news-content/news-content.module';
+import { OurSolarSystemsModule } from './components/our-solar-systems/our-solar-systems.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -21,6 +22,7 @@ describe('HomeComponent', () => {
       ],
       imports: [
         NewsContentModule,
+        OurSolarSystemsModule
       ],
       providers: [
         provideMockStore({ initialState: unitInitialStoreState }),

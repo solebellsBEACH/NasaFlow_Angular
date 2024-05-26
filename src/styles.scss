@@ -8,8 +8,8 @@
   padding: 0px;
 }
 
-.trasition-all {
-  transition: all 0.4s ease-in-out;
+.transition-all {
+  transition: all 0.4s ease-in-out !important;
 }
 
 button {
@@ -29,4 +29,25 @@ button {
 
 .col-12 {
   padding: 0px;
+}
+
+.row {
+  margin: 0px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 75rem;
+  width: 90vw;
+  margin: 2rem 0px;
+
+  @media(max-width:1024px) {
+    width: 45rem;
+  }
+
+  @media(max-width:768px) {
+    width: 95vw;
+  }
 }
