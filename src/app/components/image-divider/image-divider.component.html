@@ -1,4 +1,7 @@
-<section class="image-divider-container transition-all" alt="image-name-or-description"
-  [style.backgroundImage]="'url(' + imageUrl + ')'">
-  fhdjhdgjhggjhg
+<section class="d-flex image-divider-container transition-all" alt="image-name-or-description"
+  [style.backgroundImage]="'url(' + data.imageUrl + ')'">
+  <div class="content-text">
+    <h1 class="text-white transition-all">{{data.title}}</h1>
+    <p class="transition-all">{{data.description}}</p>
+  </div>
 </section>

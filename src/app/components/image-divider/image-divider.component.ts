@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IImageDividerData } from '../../shared/interfaces/components/home/image-divider.interface';
 
 @Component({
   selector: 'app-image-divider',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ImageDividerComponent {
 
-  imageUrl = 'https://www.nasa.gov/wp-content/uploads/2023/02/jsc2022e090458.jpg?resize=2000,1333'
+  @Input() data!: IImageDividerData;
 
 }

@@ -1,4 +1,4 @@
-import { IOurSolarSystemsCard } from "../interfaces/components/home/our-solar-systems";
+import { IOurSolarSystemsCard } from "../interfaces/components/home/our-solar-systems.interface";
 
 export const ourSolarSystemsCard: IOurSolarSystemsCard[] = [
   {
