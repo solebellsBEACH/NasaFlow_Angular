@@ -2,9 +2,9 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, 
 import { Store } from '@ngrx/store';
 import { IStore } from '../../../../shared/interfaces/store';
 import { selectImageOfDay, selectImageOfDayState } from '../../../../root-store/app/app.selectors';
-import { IImageOfDay } from '../../../../shared/interfaces/store/app';
+import { IImageOfDay } from '../../../../shared/interfaces/store/app.interface';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
-import { IGetImageOfDayResponse } from '../../../../shared/interfaces/http/response';
+import { IGetImageOfDayResponse } from '../../../../shared/interfaces/http/http-response.interface';
 import { ImageOfDayService } from './image-of-day.service';
 import { ApplicationService } from '../../../../services/application/application.service';
 import { ResolutionBreakpoints } from '../../../../shared/constants/resolutionBreakpoints';

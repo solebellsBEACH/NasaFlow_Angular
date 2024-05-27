@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { IGetImageOfDayResponse } from '../../shared/interfaces/http/response';
-import { IGetImageOfDayParams } from '../../shared/interfaces/http/params';
+import { IGetImageOfDayResponse } from '../../shared/interfaces/http/http-response.interface';
+import { IGetImageOfDayParams } from '../../shared/interfaces/http/http-params.interface';
 
 export const loadGetImagesOfDay = createAction('GET_IMAGE_OF_DAY_REQUEST', props<{ params: IGetImageOfDayParams }>());
 export const loadGetImagesOfDaySuccess = createAction(
