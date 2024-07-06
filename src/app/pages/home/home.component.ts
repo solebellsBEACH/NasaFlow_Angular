@@ -1,3 +1,4 @@
+import { ImageDividerDataList } from './../../shared/constants/imageDivider';
 import { Component } from '@angular/core';
 import { selectImageOfDayLoading } from '../../root-store/app/app.selectors';
 import { Observable } from 'rxjs';
@@ -11,6 +12,9 @@ import { loadGetImagesOfDay } from '../../root-store/app/app.actions';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+
+  imageDividerList = ImageDividerDataList
+
   selectImageOfDayLoading$: Observable<boolean>;
 
   constructor(

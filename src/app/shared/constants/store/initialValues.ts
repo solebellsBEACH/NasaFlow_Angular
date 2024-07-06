@@ -1,5 +1,5 @@
 import { IDefaultStateProps } from "../../interfaces/store";
-import { IAppState, IImageOfDay } from "../../interfaces/store/app";
+import { IAppState, IImageOfDay } from "../../interfaces/store/app.interface";
 
 const DefaultInitialProps: IDefaultStateProps = {
   error: false,

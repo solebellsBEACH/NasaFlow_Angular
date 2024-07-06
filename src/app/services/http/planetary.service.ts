@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiHandleService } from './api-handle.service';
-import { IGetImageOfDayParams } from '../../shared/interfaces/http/params';
-import { GetImageOfDayResponse } from '../../shared/interfaces/http/response';
+import { IGetImageOfDayParams } from '../../shared/interfaces/http/http-params.interface';
+import { GetImageOfDayResponse } from '../../shared/interfaces/http/http-response.interface';
 
 @Injectable({
   providedIn: 'root'

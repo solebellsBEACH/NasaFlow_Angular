@@ -29,7 +29,7 @@ describe('OurSolarSystemCardComponent', () => {
 
   describe('Testing data props', () => {
 
-    it('should contain card data', () => {
+    it('should contain card data name', () => {
       const compiled = fixture.nativeElement.textContent;
       expect(compiled).toContain(ourSolarSystemsCardData.name);
     });

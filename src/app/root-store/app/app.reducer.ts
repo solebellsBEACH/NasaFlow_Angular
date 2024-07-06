@@ -1,7 +1,7 @@
 // app.reducer.ts
 import { createReducer, on } from '@ngrx/store';
 import * as appActions from './app.actions';
-import { IAppState } from '../../shared/interfaces/store/app';
+import { IAppState } from '../../shared/interfaces/store/app.interface';
 import { AppStateInitialValue } from '../../shared/constants/store/initialValues';
 
 export const initialState: IAppState = AppStateInitialValue;

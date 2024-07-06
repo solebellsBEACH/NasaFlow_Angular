@@ -1,8 +1,8 @@
 import { IDefaultStateProps } from "."
-import { IGetImageOfDayResponse } from "../http/response"
+import { IGetImageOfDayResponse } from "../http/http-response.interface"
 
 export interface IImageOfDay extends IDefaultStateProps {
-  data:{
+  data: {
     imageOfDayList:
     IGetImageOfDayResponse[] | null
 
@@ -11,5 +11,5 @@ export interface IImageOfDay extends IDefaultStateProps {
 }
 
 export interface IAppState {
- imageOfDay: IImageOfDay
+  imageOfDay: IImageOfDay
 }

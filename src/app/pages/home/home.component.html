@@ -1,6 +1,8 @@
-<app-loading-page *ngIf="( selectImageOfDayLoading$ | async)"></app-loading-page>
-<div *ngIf="!( selectImageOfDayLoading$ | async)">
+<app-loading-page *ngIf="( selectImageOfDayLoading$ | async )"></app-loading-page>
+<div *ngIf="!( selectImageOfDayLoading$ | async )">
   <app-image-of-day></app-image-of-day>
   <app-news-content></app-news-content>
+  <app-image-divider [data]="imageDividerList[0]"></app-image-divider>
   <app-our-solar-systems></app-our-solar-systems>
+  <app-image-divider [data]="imageDividerList[1]"></app-image-divider>
 </div>

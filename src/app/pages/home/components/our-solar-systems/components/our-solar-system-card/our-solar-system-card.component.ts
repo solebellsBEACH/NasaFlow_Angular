@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IOurSolarSystemsCard } from '../../../../../../shared/interfaces/components/home/our-solar-systems';
+import { IOurSolarSystemsCard } from '../../../../../../shared/interfaces/components/home/our-solar-systems.interface';
 
 @Component({
   selector: 'app-our-solar-system-card',
